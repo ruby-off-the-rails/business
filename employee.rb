@@ -27,15 +27,18 @@
 # class
 
 class Employee
+  attr_reader :first_name, :last_name, :salary, :active
+
+  attr_writer :first_name
   # getter/reader
-  def first_name
-    @first_name
-  end
+  # def first_name
+  #   @first_name
+  # end
 
   # setter/writer
-  def first_name=(input_first_name)
-    @first_name = input_first_name
-  end
+  # def first_name=(input_first_name)
+  #   @first_name = input_first_name
+  # end
 
   def last_name
     @last_name
@@ -49,7 +52,7 @@ class Employee
   end
 
   def print_info
-    p "#{@first_name} #{@last_name} makes $#{@salary} per year."
+    p "#{first_name} #{@last_name} makes $#{@salary} per year."
   end
 
   def give_annual_raise
@@ -58,15 +61,15 @@ class Employee
 end
 
 employee1 = Employee.new("Majora", "Carter", true, 80000)
-employee1.print_info
+# employee1.print_info
 
 employee2 = Employee.new("Danilo", "Campos", true, 70000)
-# employee2.print_info
+employee2.print_info
 
 # employee1.give_annual_raise
 # employee1.print_info
 
 
-employee1.first_name = "Brian"
+employee1.first_name = "brian"
 
 employee1.print_info
