@@ -44,11 +44,11 @@ class Employee
     @last_name
   end
 
-  def initialize(input_first_name, input_last_name, input_active, input_salary)
-    @first_name = input_first_name
-    @last_name = input_last_name
-    @active = input_active
-    @salary = input_salary
+  def initialize(input_options)
+    @first_name = input_options[:first_name]
+    @last_name = input_options[:last_name]
+    @active = input_options[:active]
+    @salary = input_options[:salary]
   end
 
   def print_info
@@ -60,14 +60,21 @@ class Employee
   end
 end
 
-employee1 = Employee.new("Majora", "Carter", true, 80000)
-# employee1.print_info
+employee1 = Employee.new({
+  :first_name => "Majora",
+  :last_name => "Carter",
+  :active => true,
+  :salary => 80000
+})
+employee1.print_info
 
-employee2 = Employee.new("Danilo", "Campos", true, 70000)
+employee2 = Employee.new(first_name: "Danilo", last_name: "Campos", active: true, salary: 70000)
+
+
 employee2.print_info
 
-# employee1.give_annual_raise
-# employee1.print_info
+employee1.give_annual_raise
+employee1.print_info
 
 
 employee1.first_name = "brian"
