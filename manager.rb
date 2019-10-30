@@ -43,16 +43,33 @@ employee2 = Employee.new(first_name: "Danilo", last_name: "Campos", active: true
 
 
 class Manager < Employee
+  def initialize(input_options)
+    super
+    @employees = input_options[:employees]
+  end
+
   def send_report
     p "about to send the report"
     p "just sent the report"
   end
+
+  def count_the_employees
+    @employees.length
+  end
 end
 
-manager1 = Manager.new(first_name: "Manny", last_name: "Mortez", active: true, salary: 100000)
+manager1 = Manager.new(first_name: "Manny", last_name: "Mortez", active: true, salary: 100000, employees: [employee1, employee2])
 
 manager1.print_info
 manager1.give_annual_raise
 manager1.print_info
 
 manager1.send_report
+p manager1.count_the_employees
+
+
+# p "hello".class
+# p 42.class
+# p [].class
+# p {}.class
+# p employee1.class
