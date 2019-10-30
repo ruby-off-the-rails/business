@@ -30,19 +30,6 @@ class Employee
   attr_reader :first_name, :last_name, :salary, :active
 
   attr_writer :first_name
-  # getter/reader
-  # def first_name
-  #   @first_name
-  # end
-
-  # setter/writer
-  # def first_name=(input_first_name)
-  #   @first_name = input_first_name
-  # end
-
-  def last_name
-    @last_name
-  end
 
   def initialize(input_options)
     @first_name = input_options[:first_name]
