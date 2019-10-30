@@ -53,6 +53,21 @@ class Manager < Employee
     p "just sent the report"
   end
 
+  def give_all_raises
+    p "giving the people the raises"
+    # get the employees
+    i = 0
+    while i < @employees.length
+      @employees[i].give_annual_raise
+      i += 1
+    end
+    # give the employees raises
+  end
+
+  def fire_all_employees
+
+  end
+
   def count_the_employees
     @employees.length
   end
@@ -60,12 +75,15 @@ end
 
 manager1 = Manager.new(first_name: "Manny", last_name: "Mortez", active: true, salary: 100000, employees: [employee1, employee2])
 
-manager1.print_info
-manager1.give_annual_raise
-manager1.print_info
+# manager1.print_info
+# manager1.give_annual_raise
+# manager1.print_info
 
-manager1.send_report
-p manager1.count_the_employees
+# manager1.send_report
+# p manager1.count_the_employees
+
+manager1.give_all_raises
+p manager1
 
 
 # p "hello".class
